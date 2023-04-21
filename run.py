@@ -13,23 +13,24 @@ mi = eval(sys.argv[3])
 if len(sys.argv) == 5:
     number = eval(sys.argv[4])
 
-#print("input", ni, mi)
+sys.stderr.write(f'input {n} {ni} {mi}\n')
 
 assert len(ni) == len(mi)
 
 #n = int(sys.argv[1])
 #print(n+1)
 
-n = 7
-r = 2
+#r = 2
 
 gens = ['x', 'y']
 r1 = [('x',n), ('y',-2)]
-r2 = [('x',r), ('y',1), ('x',2), ('y',1), ('x',1-r), ('y',-1), ('x',-1), ('y',-1)]
+#r2 = [('x',r), ('y',1), ('x',2), ('y',1), ('x',1-r), ('y',-1), ('x',-1), ('y',-1)]
 #
 
 ni.append(1 - sum(ni))
 mi.append(1 - sum(mi))
+
+#sys.stderr.write(f'adjusted {n} {ni} {mi}\n')
 
 k = len(ni)
 #print("adjusted input", ni, mi)
@@ -42,9 +43,9 @@ for i in range(0, k):
     _r2.append(('y', -1))
 
 
-#print(_r2)
+sys.stderr.write(f'${_r2}\n')
 
-rels = [r1,r2]
+rels = [r1,_r2]
 
 
 def cyclic_perm(a):
